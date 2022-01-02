@@ -7,6 +7,8 @@ provider:
     stage: dev
     region: sa-east-1
     lambdaHashingVersion: "20201221"
+    layers:
+        - { Ref: DatabaseLambdaLayer }
 
 functions:
     get_comments:
@@ -24,3 +26,9 @@ functions:
                   path: comments/
                   method: post
                   cors: true
+
+layers:
+    database:
+        path: ./database
+        compatibleRuntimes:
+            - python3.8
