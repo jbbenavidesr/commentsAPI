@@ -29,6 +29,6 @@ functions:
 
 layers:
     database:
-        path: ./database
+        path: ./db_layer
         compatibleRuntimes:
             - python3.8
