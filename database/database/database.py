@@ -7,7 +7,11 @@ from sqlalchemy.orm import sessionmaker, Session
 
 logger = logging.getLogger("logger")
 
-engine = create_engine("sqlite+pysqlite:///:memory:", echo=True, future=True)
+engine = create_engine(
+    "postgresql://postgres:postgres@comments-db.cofwzvwqbxus.sa-east-1.rds.amazonaws.com/test",
+    echo=True,
+    future=True,
+)
 SessionLocal = sessionmaker(autocommit=False, autoflush=True, bind=engine)
 Base = declarative_base()
 

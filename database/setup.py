@@ -13,5 +13,5 @@ setup(
     author="Juan Bernardo Benavides",
     license="MIT",
     packages=["database"],
-    install_requires=["sqlalchemy"],
+    install_requires=["sqlalchemy", "psycopg2-binary"],
 )

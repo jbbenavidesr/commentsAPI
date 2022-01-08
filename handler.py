@@ -1,5 +1,9 @@
 import json
 
+from database.database import Comment, SessionLocal
+
+session = SessionLocal()
+
 headers = {
     "Access-Control-Allow-Origin": "*",
     "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
@@ -9,13 +13,16 @@ headers = {
 
 def get_comments(event, context):
 
-    sample_comment = [
-        {"name": "Chris", "url": "https://gomakethings.com", "comment": "Hello, world!"}
-    ]
+    comments = session.query(Comment)
 
     response = {
         "statusCode": 200,
-        "body": json.dumps(sample_comment),
+        "body": json.dumps(
+            [
+                {"name": comment.name, "url": comment.url, "comment": comment.Comment}
+                for comment in comments
+            ]
+        ),
         "headers": headers,
     }
 
@@ -29,8 +36,11 @@ def create_comment(event, context):
     comment = {
         "name": body["name"],
         "url": body["url"],
-        "comment": body["comment"],
+        "Comment": body["comment"],
+        "key": body["key"],
     }
+
+    Comment.create(session, **comment)
 
     response = {"statusCode": 200, "body": json.dumps(comment), "headers": headers}
 
