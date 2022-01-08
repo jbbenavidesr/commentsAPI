@@ -8,6 +8,8 @@ sqlalchemy = "==1.4"
 
 [dev-packages]
 black = "*"
+alembic = "*"
+commentapi-databaseconnection = {editable = true, path = "./database"}
 
 [requires]
 python_version = "3.8"
