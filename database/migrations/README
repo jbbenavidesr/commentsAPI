@@ -1,0 +1,5 @@
+Generic single-database configuration.
+
+alembic upgrade head -> actualizar la base de datos con el que esta en delantera
+alembic revision --autogenerate -m "add column extra files" -> crea una nueva migracion
+alembic stamp head -> le dice a la base de datos cual es la migracion que esta actualizada sin correrla
