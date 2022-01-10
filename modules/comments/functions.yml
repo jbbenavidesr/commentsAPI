@@ -1,0 +1,15 @@
+get_comments:
+    handler: /modules/comments/handler.get_comments
+    events:
+        - http:
+              path: comments/
+              method: get
+              cors: true
+
+create_comment:
+    handler: /modules/comments/handler.create_comment
+    events:
+        - http:
+              path: comments/
+              method: post
+              cors: true

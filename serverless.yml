@@ -11,21 +11,8 @@ provider:
         - { Ref: DatabaseLambdaLayer }
 
 functions:
-    get_comments:
-        handler: handler.get_comments
-        events:
-            - http:
-                  path: comments/
-                  method: get
-                  cors: true
-
-    create_comment:
-        handler: handler.create_comment
-        events:
-            - http:
-                  path: comments/
-                  method: post
-                  cors: true
+    # Comments module
+    - ${file(./modules/comments/functions.yml)}
 
 layers:
     database:
