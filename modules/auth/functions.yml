@@ -1,0 +1,9 @@
+login:
+    handler: /modules/auth/handler.login
+    environment:
+        cognito_pool_id: sa-east-1_NmzrCab8y
+    events:
+        - http:
+              path: auth/login/
+              method: post
+              cors: true
