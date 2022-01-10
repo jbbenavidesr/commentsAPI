@@ -2,7 +2,7 @@ login:
     handler: modules/auth/handler.login
     environment:
         cognito_pool_id: sa-east-1_NmzrCab8y
-        cognito_client_id: 73rl5oaf9rkodugqrg8f1gt1pa
+        cognito_client_id: 5o1suf92ste4uitdo49q4mdrrl
     events:
         - http:
               path: auth/login/
