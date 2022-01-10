@@ -19,7 +19,12 @@ def get_comments(event, context):
         "statusCode": 200,
         "body": json.dumps(
             [
-                {"name": comment.name, "url": comment.url, "comment": comment.Comment}
+                {
+                    "name": comment.name,
+                    "url": comment.url,
+                    "comment": comment.Comment,
+                    "email": comment.email,
+                }
                 for comment in comments
             ]
         ),

@@ -1,5 +1,5 @@
 get_comments:
-    handler: /modules/comments/handler.get_comments
+    handler: modules/comments/handler.get_comments
     events:
         - http:
               path: comments/
@@ -9,7 +9,7 @@ get_comments:
         - { Ref: DatabaseLambdaLayer }
 
 create_comment:
-    handler: /modules/comments/handler.create_comment
+    handler: modules/comments/handler.create_comment
     events:
         - http:
               path: comments/
@@ -17,7 +17,5 @@ create_comment:
               cors: true
               authorizer:
                   arn: arn:aws:cognito-idp:sa-east-1:589143157548:userpool/sa-east-1_NmzrCab8y
-                  claims:
-                      - email
     layers:
         - { Ref: DatabaseLambdaLayer }

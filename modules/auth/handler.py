@@ -4,7 +4,8 @@ import os
 import boto3
 
 cidp = boto3.client("cognito-idp")
-client_id = os.getenv("COGNITO_CLIENT_ID_USER")
+pool_id = os.getenv("cognito_pool_id")
+client_id = os.getenv("cognito_client_id")
 
 
 def login(event, context):
