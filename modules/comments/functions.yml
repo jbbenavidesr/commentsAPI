@@ -5,6 +5,8 @@ get_comments:
               path: comments/
               method: get
               cors: true
+    layers:
+        - { Ref: DatabaseLambdaLayer }
 
 create_comment:
     handler: /modules/comments/handler.create_comment
@@ -13,3 +15,5 @@ create_comment:
               path: comments/
               method: post
               cors: true
+    layers:
+        - { Ref: DatabaseLambdaLayer }

@@ -7,12 +7,12 @@ provider:
     stage: dev
     region: sa-east-1
     lambdaHashingVersion: "20201221"
-    layers:
-        - { Ref: DatabaseLambdaLayer }
 
 functions:
     # Comments module
     - ${file(./modules/comments/functions.yml)}
+    # Auth module
+    - ${file(./modules/auth/functions.yml)}
 
 layers:
     database:
