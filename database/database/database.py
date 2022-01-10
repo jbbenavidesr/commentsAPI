@@ -71,3 +71,4 @@ class Comment(Base, CRUDMixin):
     url = Column(String)
     key = Column(String)
     Comment = Column(String)
+    email = Column(String, default="jbbenavidesr@gmail.com")
